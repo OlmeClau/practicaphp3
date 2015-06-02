@@ -1,5 +1,7 @@
 @extends('layout')
 @section('content')
+<h1> peliculas y mas</h1>
+
 {!! Form::open(['url'=>'movies']) !!}
 {!! Form::label('name','Title:') !!}
 {!! Form::text('title') !!}

@@ -11,6 +11,8 @@ use Request;
 
 
 
+
+
 class MovieController extends Controller {
 
 	/**
@@ -70,6 +72,10 @@ class MovieController extends Controller {
 		//$ratings=Rating::all();
 		$ratings = Rating::where('movie_id', $id)->get();
 		$total=Rating::where('movie_id', $id)->sum('value');
+		if($total==0)
+			$total=1;
+
+		
 		//Auth::user()->products->sum('price');
 		//Employee::where('login', $login)->first();
 		//ss$user = DB::table('users')->where('name', 'John')->first();

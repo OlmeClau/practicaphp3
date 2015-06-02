@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+
 </head>
 <body>
 
@@ -42,8 +44,11 @@
       </tr>
       <tr>
         <td>Ratings about this movie</td>
+
         <td><p>cantidad: {{count($ratings)}}</p>
+       @if(count($ratings)!=0)
 <p>promedio: {{$total/count($ratings)}}</p>
+@endif
 </td>
       </tr>
       <tr>

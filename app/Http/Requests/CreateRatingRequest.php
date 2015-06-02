@@ -22,7 +22,7 @@ class CreateRatingRequest extends Request {
 	public function rules()
 	{
 		return [
-		'value'=>'required | digits_between:0,1'
+		'value' => 'required|numeric|min:0|max:10'
 			//
 		];
 	}
