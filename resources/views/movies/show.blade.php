@@ -85,6 +85,8 @@
 		{!! Form::hidden('review_id', $review->id) !!}
 		{!! Form::submit('Like') !!}
 		{!! Form::close() !!}
+
+		
 		
 		@endif
 		@endforeach
