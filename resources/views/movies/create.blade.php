@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-<h1> peliculas y mas</h1>
+<h1> peliculas y mas!</h1>
 
 {!! Form::open(['url'=>'movies']) !!}
 {!! Form::label('name','Title:') !!}
@@ -8,8 +8,16 @@
 <br>
 {!! Form::label('name','Description') !!}
 {!! Form::text('description') !!}
-<br><br>
 
+
+<br>
+{{!! Form::label('name','Category')!!}}
+{{!! Form::select('category', array(
+    '',
+    'terror'=>'terror',
+    'comedia'=>'comedia'),'2') !!}}
+{{Form::close() }}
+<br>
 @if( $errors->has('title') )
               @foreach($errors->get('title') as $error )
                   <br />* {{ $error }}

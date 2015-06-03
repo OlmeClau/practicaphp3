@@ -5,6 +5,8 @@ use App\Http\Controllers\Controller;
 use App\Movie;
 use App\Review;
 use App\Rating;
+use App\Like;
+use Auth; 
 
 use App\Http\Requests\CreateMovieRequest;
 use Request;
@@ -71,6 +73,7 @@ class MovieController extends Controller {
 		$reviews=Review::all();
 		//$ratings=Rating::all();
 		$ratings = Rating::where('movie_id', $id)->get();
+		$user=Auth::user();
 		$total=Rating::where('movie_id', $id)->sum('value');
 		if($total==0)
 			$total=1;
@@ -85,7 +88,7 @@ class MovieController extends Controller {
 
 
 
-		return view('movies.show', compact('movie','reviews','ratings','total'));
+		return view('movies.show', compact('movie','reviews','ratings','total', 'user'));
 	}
 
 	/**

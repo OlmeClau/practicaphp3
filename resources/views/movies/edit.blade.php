@@ -8,7 +8,10 @@
 <br>
 {!! Form::label('name','Description:') !!}
 {!! Form::text('description') !!}
-<br><br>
+<br>
+{!! Form::label('name','category') !!}
+{!! Form::text('category') !!}<br>
+<br>
 {!! Form::submit('Guardar') !!}
 {!! Form::close() !!}
 @stop

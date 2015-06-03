@@ -16,5 +16,10 @@ public function movie()
 		return $this->belongsTo('App\User');
 	}
 	protected $guarded = array();
+	public function likes()
+	{
+		return $this->hasMany('App\Like');
+	}
+	
 
 }
