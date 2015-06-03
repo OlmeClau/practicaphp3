@@ -76,8 +76,7 @@
 		<button type="submit" class="btn btn-danger btn-mini">Borrar</button>
 		{!! Form::close() !!}
 		-----------------------------
-		@foreach ($review->likes as $like)
-		@if($like->user_id != $user->id || count($review->likes)== 0)
+		
 		
 		{!! Form::open(['url'=>'likes']) !!}
 		{!! Form::label('name','like:') !!}
@@ -86,14 +85,7 @@
 		{!! Form::hidden('review_id', $review->id) !!}
 		{!! Form::submit('Like') !!}
 		{!! Form::close() !!}
-		@else
-		{!! Form::open(array('route' => array('likes.destroy', $like->id), 'method' => 'delete')) !!}
-		<button type="submit" class="btn btn-danger btn-mini">dislike</button>
-		{!! Form::close() !!}
--------------------------------------
-
-		@endif
-		@endforeach
+		
 		@endif
 		@endforeach
 		</td>
